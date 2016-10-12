@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/testing/;  //botRegexClassic = /^\Classic/i; 
-      botRegexHa = /^\/Ha/; 
+      botRegexBender = /^\/Bender/; 
       botRegexDonald = /^\/Donald/
   //var people = ["KARAN","GAVIN","CIAMACCO","NICK","BRENNAN"]
   if(request.text && botRegex.test(request.text)) {
@@ -23,9 +23,9 @@ function respond() {
     postMessage("https://i.groupme.com/640x364.jpeg.f8a0e216bf7e42ed9a86b3ae23cc2ff1.large");
     this.res.end();
   }*/
-  else if(request.text && botRegexHa.test(request.text)) {
+  else if(request.text && botRegexBender.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://media.tenor.co/images/36bcb1f7221ba62a8eeb17444a8e9e97/raw");
+    postMessage("http://67.media.tumblr.com/tumblr_m7e2ahFFDo1qcuoflo2_250.gif");
     this.res.end();
   } 
   else if(request.text && botRegexDonald.test(request.text)) {
