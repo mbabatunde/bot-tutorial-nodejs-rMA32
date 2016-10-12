@@ -9,6 +9,7 @@ function respond() {
       botRegexBender = /^\/Bender/; 
       botRegexDonald = /^\/Donald/;
       botRegexStop = /^\/Stop/;
+      botRegexFunny = /^\/Funny/;
   //var people = ["KARAN","GAVIN","CIAMACCO","NICK","BRENNAN"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -39,6 +40,13 @@ function respond() {
     postMessage("https://media.giphy.com/media/TlNY7ob29c4Gk/giphy.gif");
     this.res.end();
   }
+  
+  else if(request.text && botRegexFunny.text(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Freaking Karan");
+    this.res.end();
+  }
+  
   else {
     console.log("Cool story bro");
     this.res.writeHead(200);
