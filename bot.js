@@ -7,7 +7,8 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/testing/;  //botRegexClassic = /^\Classic/i; 
       botRegexBender = /^\/Bender/; 
-      botRegexDonald = /^\/Donald/
+      botRegexDonald = /^\/Donald/;
+      botRegexStop = /^\/Stop/;
   //var people = ["KARAN","GAVIN","CIAMACCO","NICK","BRENNAN"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -32,7 +33,12 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://s3.amazonaws.com/wp-ag/wp-content/uploads/sites/72/2015/09/Trumpreactionface.gif");
     this.res.end();
-  } 
+  }
+  else if(request.text && botRegexStop.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://media.giphy.com/media/TlNY7ob29c4Gk/giphy.gif");
+    this.res.end();
+  }
   else {
     console.log("Cool story bro");
     this.res.writeHead(200);
