@@ -41,7 +41,7 @@ function respond() {
     this.res.end();
   }
   
-  else if(request.text && botRegexFunny.text(request.text)) {
+  else if(request.text && botRegexFunny.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Freaking Karan");
     this.res.end();
