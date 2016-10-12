@@ -23,12 +23,12 @@ function respond() {
     postMessage("https://i.groupme.com/640x364.jpeg.f8a0e216bf7e42ed9a86b3ae23cc2ff1.large");
     this.res.end();
   }*/
-  else if(request.text && botRegexBender.test(request.text)) {
+  else if(request.text && botRegexHa.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://media.tenor.co/images/36bcb1f7221ba62a8eeb17444a8e9e97/raw");
     this.res.end();
   } 
-  else if(request.text && botRegexHa.test(request.text)) {
+  else if(request.text && botRegexDonald.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://s3.amazonaws.com/wp-ag/wp-content/uploads/sites/72/2015/09/Trumpreactionface.gif");
     this.res.end();
