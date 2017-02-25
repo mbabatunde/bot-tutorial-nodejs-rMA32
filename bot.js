@@ -6,10 +6,10 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/testing/;  //botRegexClassic = /^\Classic/i; 
-      botRegexBender = /^\Bender/; 
-      botRegexDonald = /^\Donald/;
-      botRegexStop = /^\Stop/;
-      botRegexFunny = /^\Funny/;
+      botRegexBender = /^\/Bender/; 
+      botRegexDonald = /^\/Donald/;
+      botRegexStop = /^\/Stop/;
+      botRegexFunny = /^\/Funny/;
   //var people = ["KARAN","GAVIN","CIAMACCO","NICK","BRENNAN"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
