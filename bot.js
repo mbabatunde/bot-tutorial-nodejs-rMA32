@@ -10,6 +10,7 @@ function respond() {
       botRegexDonald = /^\/Donald/;
       botRegexStop = /^\/Stop/;
       botRegexFunny = /^\/Funny/;
+      botRegexTriggered = /^\/Triggered/;
   //var people = ["KARAN","GAVIN","CIAMACCO","NICK","BRENNAN"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -44,6 +45,12 @@ function respond() {
   else if(request.text && botRegexFunny.test(request.text)) {
     this.res.writeHead(200);
     postMessage("Freaking Karan");
+    this.res.end();
+  }
+  
+  else if(request.text && botRegexTriggered.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://myriamsmemeoftheday.weebly.com/uploads/7/7/8/8/77889656/thomas-sees-triggered-trent.jpg");
     this.res.end();
   }
   
